@@ -1,9 +1,6 @@
 import numpy as np
 
 class KMeansHardcore:
-    """
-    Implementação 'hardcore' do algoritmo K-means.
-    """
     def __init__(self, n_clusters, max_iter=300):
         self.n_clusters = n_clusters
         self.max_iter = max_iter
@@ -25,9 +22,7 @@ class KMeansHardcore:
             # Passo 2: Recalcular os centróides
             new_centroids = self._update_centroids(X)
 
-            # Condição de parada: se os centróides não mudaram, pare.
             if np.allclose(self.centroids, new_centroids):
-                print(f"K-means Hardcore - Convergiu na iteração {i+1}.")
                 break
             
             self.centroids = new_centroids
